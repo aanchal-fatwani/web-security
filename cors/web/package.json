@@ -1,0 +1,11 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "ls": "live-server --port=1234"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
