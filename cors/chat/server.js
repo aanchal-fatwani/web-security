@@ -11,12 +11,18 @@ const server = express();
 server.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
 server.use(bodyParser.json()); // support json encoded bodies
 
-// server.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("access-control-allow-methods", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
+server.use(function (req, res, next) {
+  // res.header("Access-Control-Allow-Origin", "*");
+  // res.header("access-control-allow-methods", "*");
+  // res.header(
+  //   "Access-Control-Allow-Headers",
+  //   "Origin, X-Requested-With, Content-Type, Accept"
+  // );
+
+  // if ("OPTIONS" == req.method) res.send(400);
+
+  next();
+});
 
 if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir, { recursive: true });
